@@ -1,36 +1,27 @@
 import 'package:flutter/cupertino.dart';
+import 'package:sellers/presentation/router/router.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return const CupertinoApp(
-      title: 'Flutter Demo',
-      home: HomeWidget(),
-    );
-  }
+  State<MyApp> createState() => _MyAppState();
 }
 
-class HomeWidget extends StatelessWidget {
-  const HomeWidget({super.key});
+class _MyAppState extends State<MyApp> {
+  final AppRouter router = AppRouter();
 
   @override
   Widget build(BuildContext context) {
-    return const CupertinoPageScaffold(
-      backgroundColor: CupertinoColors.white,
-      navigationBar: CupertinoNavigationBar(
-        middle: Text(
-          'Sellers',
-          style: TextStyle(fontSize: 26),
-        ),
-      ),
-      child: SizedBox(),
+    return CupertinoApp(
+      title: 'Flutter Sellers',
+      routes: router.routes,
+      onGenerateRoute: router.onGenerateRoute,
+      initialRoute: AppRouter.initialRoute,
     );
   }
 }
