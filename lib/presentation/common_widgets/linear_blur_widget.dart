@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 
+//TODO optimization coz cause serious lags
 class LinearBlurWidget extends StatelessWidget {
   const LinearBlurWidget(
       {super.key,
@@ -21,6 +22,7 @@ class LinearBlurWidget extends StatelessWidget {
   }
 
   Widget buildGradient() {
+
     List<Widget> grad = [];
     for (int i = 0; i <= size.height; i += 1) {
       grad.add(ClipRect(

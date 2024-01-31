@@ -10,13 +10,13 @@ class AppBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        const LinearBlurWidget(
+        /*const LinearBlurWidget(
           size: Size(double.infinity, 130),
-        ),
+        ),*/
         ClipRect(
           child: Container(
             width: double.infinity,
-            height: 140,
+            height: 170,
             decoration: BoxDecoration(
                 gradient: LinearGradient(
               begin: Alignment.topCenter,
@@ -47,12 +47,12 @@ class AppBarWidget extends StatelessWidget {
                         'Sellers',
                         style: GoogleFonts.inter(
                             fontWeight: FontWeight.w600,
-                            fontSize: 44,
+                            fontSize: 54,
                             color: Colors.black),
                       )),
                       const Icon(
                         CupertinoIcons.person_crop_circle,
-                        size: 30,
+                        size: 44,
                         color: CupertinoColors.black,
                       )
                     ],
